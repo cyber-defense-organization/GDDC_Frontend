@@ -1,7 +1,7 @@
 # GDDC_Frontend
 Great Danes Defense Competion Front End
 ## Current Screenshot
-![Image description](/v1.png/)
+![Image description](/v2.png/)
 ## Project setup
 Make sure to run after git clone
 ```

@@ -9,7 +9,7 @@
       </div>
       <div class="dropDown">
         <!-- <p>Menu</p> -->
-        <font-awesome-icon icon="coffee"/>
+        <font-awesome-icon icon="bars"/>
       </div>
     </div>
   </div>
@@ -66,6 +66,7 @@ box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
   grid-area: logo;
 }
 .logo img{
+  margin-top: 3px;
   width: 60%;
   height: 50%;
 }
