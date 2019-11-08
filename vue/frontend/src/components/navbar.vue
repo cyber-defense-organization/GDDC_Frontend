@@ -2,13 +2,14 @@
   <div class="navbar">
     <div class="navGrid">
       <div class="logo">
-        <p>Logo</p>
+        <img src="../assets/glogo.png" alt="">
       </div>
       <div class="bar">
         <p></p>
       </div>
       <div class="dropDown">
-        <p>Menu</p>
+        <!-- <p>Menu</p> -->
+        <font-awesome-icon icon="coffee"/>
       </div>
     </div>
   </div>
@@ -33,7 +34,7 @@ export default {
   width: 100%;
   height: 40px;
   font-size: 1em;
-  background-color: $twoColor;
+  background-color: $oneColor;
   -webkit-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
 -moz-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
 box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
@@ -47,7 +48,7 @@ box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
   'logo bar dropDown';
   justify-items: center;
   align-items: center;
-  color: $oneColor;
+  color: $twoColor;
 }
 .navGrid p{
   // -webkit-box-shadow: 0px 0px 46px 2px rgba(255,255,255,1);
@@ -63,6 +64,10 @@ box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
 
 .logo{
   grid-area: logo;
+}
+.logo img{
+  width: 60%;
+  height: 50%;
 }
 .bar{
   grid-area: bar;

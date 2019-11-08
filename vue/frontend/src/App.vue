@@ -26,6 +26,8 @@ html, body {
   text-align: center;
   //margin-bottom: 60px;
   //background-color: $twoColor;
+  background-image: url('./assets/backgroundVape.jpg');
+  background-size: cover;
   //color: #2c3e50;
 }
 
