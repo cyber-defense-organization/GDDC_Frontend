@@ -9,10 +9,8 @@
         </div>
       </div>
       <div class="card card1">
-        <div class="g2">
-          <line-chart :chart-data="datacollection"></line-chart>
-          <button @click="fillData()">Randomize</button>
-        </div>
+        <bLine/>
+        <button class="Search__button" v-on:click="requestData()">Find</button>
       </div>
       <div class="card card1">
         <div class="g3">
@@ -25,23 +23,55 @@
 </template>
 
 <script>
+import axios from 'axios'
 import navbar from '../components/navbar.vue'
 import LineChart from '../components/LineChart.js'
+import bLine from '../components/bLine.vue'
 
 export default {
   components: {
     LineChart,
+    bLine,
     navbar
   },
   data () {
     return {
+      package: null,
+      packageName: '',
+      period: 'last-month',
+      loaded: false,
+      downloads: [],
+      labels: [],
+      showError: false,
+      errorMessage: 'Please enter a package name',
       datacollection: null
     }
   },
   mounted () {
     this.fillData()
+    this.datacollection.forEach(function (obj) {
+      console.log(obj)
+      // obj.datasets += ({
+      //   label: 'Yuh3',
+      //   data: [this.getRandomInt(), this.getRandomInt()]
+      // },)
+    })
   },
   methods: {
+    requestData () {
+      axios.get(`https://api.npmjs.org/downloads/range/${this.period}/${this.package}`)
+        .then(response => {
+          console.log(response)
+          this.downloads = response.data.downloads.map(download => download.downloads)
+          this.labels = response.data.downloads.map(download => download.day)
+          this.packageName = response.data.package
+          this.loaded = true
+        })
+        .catch(err => {
+          this.errorMessage = err.response.data.error
+          this.showError = true
+        })
+    },
     fillData () {
       this.datacollection = {
         labels: [0, 100, 'red'],

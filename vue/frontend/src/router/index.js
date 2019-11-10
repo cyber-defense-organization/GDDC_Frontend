@@ -11,6 +11,16 @@ const routes = [
     component: Home
   },
   {
+    path: '/c2',
+    name: 'c2',
+    component: () => import('../components/c2.vue')
+  },
+  {
+    path: '/liam',
+    name: 'liam',
+    component: () => import('../components/liam.vue')
+  },
+  {
     path: '/chart',
     name: 'chart',
     component: () => import('../views/chartEx.vue')
