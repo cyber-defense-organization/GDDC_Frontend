@@ -16,6 +16,11 @@ const routes = [
     component: () => import('../components/dropDown.vue')
   },
   {
+    path: '/route',
+    name: 'route',
+    component: () => import('../components/route.vue')
+  },
+  {
     path: '/c2',
     name: 'c2',
     component: () => import('../components/c2.vue')
