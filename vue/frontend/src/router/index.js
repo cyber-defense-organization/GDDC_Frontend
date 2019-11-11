@@ -11,6 +11,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/d1',
+    name: 'd1',
+    component: () => import('../components/dropDown.vue')
+  },
+  {
     path: '/c2',
     name: 'c2',
     component: () => import('../components/c2.vue')
