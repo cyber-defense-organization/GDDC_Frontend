@@ -7,13 +7,6 @@
      type="search" name="search"
      v-model='package'
      > -->
-     <navbar/>
-
-    <div class="error-message" v-if="showError">
-      {{ errorMessage }}
-    </div>
-
-    <h1 class="title" v-if="loaded">{{ packageName }}</h1>
     <div class="graph">
       <div class="card">
         <line-chart v-if="loaded" :chart-data="downloads" :chart-labels="labels"></line-chart>
@@ -26,12 +19,11 @@
 <script>
 import axios from 'axios'
 import LineChart from './bLine.vue'
-import navbar from '../components/navbar.vue'
+// import navbar from '../components/navbar.vue'
 
 export default {
   components: {
-    LineChart,
-    navbar
+    LineChart
   },
   name: 'c2',
   data: function () {

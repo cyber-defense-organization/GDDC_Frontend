@@ -5,7 +5,7 @@
         <img src="../assets/glogo.png" alt="">
       </div>
       <div class="bar">
-        <p></p>
+        <p>{{ middleText }}</p>
       </div>
       <div class="dropDown">
         <!-- <p>Menu</p> -->
@@ -18,6 +18,12 @@
 <script>
 
 export default {
+  props: {
+    middleText: {
+      default: '',
+      type: String
+    }
+  },
   name: 'navbar',
   data: function () {
     return {
@@ -36,8 +42,8 @@ export default {
   font-size: 1em;
   background-color: $oneColor;
   -webkit-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
--moz-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
+  box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
 }
 
 .navGrid{

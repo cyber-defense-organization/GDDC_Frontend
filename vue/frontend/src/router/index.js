@@ -11,6 +11,21 @@ const routes = [
     component: Home
   },
   {
+    path: '/sb',
+    name: 'scorebox',
+    component: () => import('../components/scorebox.vue')
+  },
+  {
+    path: '/teamPanel',
+    name: 'tp',
+    component: () => import('../components/teamPanel.vue')
+  },
+  {
+    path: '/team',
+    name: 'tp',
+    component: () => import('../views/team.vue')
+  },
+  {
     path: '/d1',
     name: 'd1',
     component: () => import('../components/dropDown.vue')

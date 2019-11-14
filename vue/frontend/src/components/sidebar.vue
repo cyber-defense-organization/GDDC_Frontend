@@ -1,13 +1,13 @@
 <template lang="html">
-  <div class="navbar">
-
+  <div class="sidebar card">
+    <h1>I'm de Sidebar</h1>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'navbar',
+  name: 'sidebar',
   data: function () {
     return {
     }
@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '/../style/var.scss';
-body{
-  background-color: $oneColor;
+.sidebar{
+  height: 100px;
 }
 </style>

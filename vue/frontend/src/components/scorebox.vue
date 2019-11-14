@@ -1,0 +1,53 @@
+<template lang="html">
+  <div class="scorebox">
+    <div class="sc1">
+      <h3>{{ score1 }}</h3>
+      <p>Current Score</p>
+    </div>
+    <div class="sc2">
+      <h3>{{ score2 }}</h3>
+      <p>Injects Complete</p>
+    </div>
+    <div class="sc3">
+      <h3>{{ score3 }}</h3>
+      <p>Balance</p>
+    </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'scorebox',
+  data: function () {
+    return {
+      score1: '0.0',
+      score2: '0/0',
+      score3: '0.0'
+    }
+  },
+  methods: {
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '/../style/var.scss';
+.scorebox{
+  background-color: $oneColor;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;;
+  grid-template-areas:
+  "sc1 sc2 sc3";
+}
+.sc1{
+  grid-area: sc1;
+}
+.sc2{
+  grid-area: sc2;
+}
+.sc3{
+  grid-area: sc3;
+}
+</style>
