@@ -1,18 +1,45 @@
-<template>
+<template lang="html">
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <navbar/>
+    <div class='hgrid'>
+      <div class='card'>content</div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// import axios from 'axios'
+import navbar from '../components/navbar.vue'
 
 export default {
-  name: 'home',
   components: {
-    HelloWorld
+    navbar
+  },
+  name: 'home',
+  data: function () {
+    return {
+    }
+  },
+  methods: {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '/../style/var.scss';
+body{
+  background-color: $oneColor;
+}
+.hgrid{
+  margin-top: 40px;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-gap: 2em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "m m s"
+    "m m .";
+}
+
+</style>

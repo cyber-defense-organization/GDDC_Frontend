@@ -96,6 +96,7 @@ export default {
 <style lang="scss">
 @import '/../style/var.scss';
 .chartGrid{
+  margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 40px;

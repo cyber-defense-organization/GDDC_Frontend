@@ -40,6 +40,7 @@ export default {
 <style lang="scss" scoped>
 @import '/../style/var.scss';
 .teamGrid {
+  margin-top: 40px;
   padding: 1em;
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;

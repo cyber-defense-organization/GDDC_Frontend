@@ -37,14 +37,27 @@ export default {
 <style lang="scss" scoped>
 @import '/../style/var.scss';
 .navbar{
+  position: fixed;
+  left:0;           /* top left corner should start at leftmost spot */
+  top:0;            /* top left corner should start at topmost spot */
+  z-index:200;  /* high z index so other content scrolls underneath */
   width: 100%;
+  //height: 100%;
   height: 40px;
   font-size: 1em;
   background-color: $oneColor;
-  -webkit-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
-  box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
+  // -webkit-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
+  // -moz-box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
+  // box-shadow: 0px 15px 0px -14px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 20px -10px $twoColor;
+
+  //animation: dropDown 1s ;
 }
+
+@keyframes dropDown {
+    from {height: 40px;}
+    to {height: 100%}
+  }
 
 .navGrid{
   display: grid;
@@ -64,8 +77,8 @@ export default {
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 .navGrid p:hover{
-  text-shadow:.1px .1px 2px $r3Color, .1px .1px 2px $r2Color;
-  color: $r3Color;
+  text-shadow:.1px .1px 2px $vape4, .1px .1px 2px $vape5;
+  color: $oneColor;
 }
 
 .logo{
