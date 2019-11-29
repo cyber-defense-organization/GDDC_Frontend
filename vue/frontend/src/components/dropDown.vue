@@ -6,6 +6,7 @@
            {{ item }}
          </li>
          <li :class="[ 'l' + index ]" v-for="(item, index) in listItem" :key="index">
+           {{ item }}
           </li>
         <!-- <li v-for="value in listItem">
           {{ value }}  'obj-' + obj.id  'active'+index: index === 0

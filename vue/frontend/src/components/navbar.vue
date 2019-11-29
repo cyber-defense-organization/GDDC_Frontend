@@ -7,11 +7,17 @@
       <div class="bar">
         <p>{{ middleText }}</p>
       </div>
-      <div class="dropDown">
+      <div class="menu">
         <!-- <p>Menu</p> -->
-        <font-awesome-icon icon="bars"/>
+        <font-awesome-icon class="mButton" icon="bars" v-on:click="menuToggle()"/>
       </div>
     </div>
+    <div v-if="dropDown" class='dropDown'>
+        <div class="dd1 cardD"><a href="/scoreboard">Scoreboard</a></div>
+        <div class="dd2 cardD"><a href="/team">Team</a></div>
+        <div class="dd3 cardD"><a href="/shop">Shop</a></div>
+        <div class="dd4 cardD"><a href="/">Login</a></div>
+      </div>
   </div>
 </template>
 
@@ -27,9 +33,17 @@ export default {
   name: 'navbar',
   data: function () {
     return {
+      dropDown: false
     }
   },
   methods: {
+    menuToggle: function () {
+      if (this.dropDown) {
+        this.dropDown = false
+      } else {
+        this.dropDown = true
+      }
+    }
   }
 }
 </script>
@@ -53,6 +67,32 @@ export default {
 
   //animation: dropDown 1s ;
 }
+
+a {
+  text-decoration: none;
+  color: $oneColor;
+}
+
+.dropDown{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+  '. dd1'
+  '. dd2'
+  '. dd3'
+  '. dd4';
+  text-align: center;
+  // justify-items: center;
+  // align-items: center;
+  color: $twoColor;
+  //animation: dropDown 3s ;
+}
+
+.dd1{grid-area: dd1}
+.dd2{grid-area: dd2}
+.dd3{grid-area: dd3}
+.dd4{grid-area: dd4}
 
 @keyframes dropDown {
     from {height: 40px;}
@@ -94,5 +134,11 @@ export default {
 }
 .dropDown{
   grid-area: dropDown;
+}
+
+.mButton:hover{
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: .5em;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 </style>
