@@ -1,8 +1,44 @@
 <template>
   <div id="app">
-    <router-view/>
+        <!-- <div id="nav">
+            <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
+        </div>
+        <router-view @authenticated="setAuthenticated" /> -->
+        <router-view/>
   </div>
 </template>
+
+<script>
+    export default {
+        name: 'App',
+        data() {
+            return {
+                authenticated: false,
+                mockAccount: {
+                    username: "nraboy",
+                    password: "password"
+                }
+            }
+        },
+        mounted() {
+            // if(this.$cookie.get('auth') && window.location.pathname=="login") {
+            //    this.$router.replace({ name: "secure" });
+            // }
+            // else 
+            // if(!this.$cookie.get('auth')) {
+            //     this.$router.replace({ name: "login" });
+            // }
+        },
+        methods: {
+            setAuthenticated(status) {
+                this.authenticated = status;
+            },
+            logout() {
+                this.authenticated = false;
+            }
+        }
+    }
+</script>
 
 <style lang="scss">
 @import '/style/var.scss';
