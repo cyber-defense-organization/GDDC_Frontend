@@ -8,15 +8,14 @@
 </template>
 
 <script>
+import checkAuth from "../components/checkAuth"
     export default {
         name: 'Secure',
         data() {
             return {};
         },         
         mounted() {
-            if(!this.$cookie.get('auth')) {
-                this.$router.replace({ name: "login" });
-            }
+           checkAuth(this.$cookie, this.$router);
         },
     }
 </script>

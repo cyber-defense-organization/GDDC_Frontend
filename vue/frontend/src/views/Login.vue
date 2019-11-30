@@ -21,19 +21,6 @@ export default{
     },
     methods:{
         login(){
-            // const url = 'mongodb://localhost:27017/';
-            
-            // // Database Name
-            // const dbName = 'gddc';
-            
-            // // Use connect method to connect to the server
-            // MongoClient.connect(url, function(err, client) {
-            // console.log("Connected successfully to server");
-            
-            // const db = client.db(dbName);
-            
-            // client.close();
-            // });
             if(this.input.username != "" && this.input.password != ""){
                 if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password){
                     this.$cookie.set('auth', this.input.username, 1);
