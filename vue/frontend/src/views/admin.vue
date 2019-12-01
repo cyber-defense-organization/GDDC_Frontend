@@ -4,11 +4,14 @@
     <div class='agrid'>
       <div class='cardS m'>
         <h1>Admin Panel</h1>
+        <light/>
         <div class='teamCardGrid'>
             <div class="cardD t1">
                 <p>Team Name : </p>
                 <p>Current Score : </p>
                 <p> : </p>
+                <div class='card'>Hello</div>
+                <light/>
             </div>
             <div class="cardD t2">
                 <p>Team Name : </p>
@@ -64,10 +67,12 @@
 <script>
 // import axios from 'axios'
 import navbar from '../components/navbar.vue'
+import light from '../components/toggleLight.vue'
 
 export default {
   components: {
-    navbar
+    navbar,
+    light
   },
   name: 'admin',
   data: function () {
