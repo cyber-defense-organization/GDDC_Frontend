@@ -1,0 +1,19 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "Great Danes Defense Competion Front End ## Current Screenshot ![Image description](/v4.png/) ## Project setup Make sure to run after git clone ``` npm install ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyber-defense-organization/GDDC_Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyber-defense-organization/GDDC_Frontend/issues"
+  },
+  "homepage": "https://github.com/cyber-defense-organization/GDDC_Frontend#readme"
+}
