@@ -4,7 +4,7 @@
     <div class="teamGrid">
       <div class="main">
         <teamPanel/>
-        <liveTestGraph/>
+        <!-- <liveTestGraph/> -->
       </div>
       <div class="sidebar">
         <sidebar/>
@@ -17,14 +17,14 @@
 import navbar from '../components/navbar.vue'
 import sidebar from '../components/sidebar.vue'
 import teamPanel from '../components/teamPanel.vue'
-import c2 from '../components/c2.vue'
+// import c2 from '../components/c2.vue'
 // import LineChart from '../components/LineChart.js'
 export default {
   components: {
     'teamPanel': teamPanel,
     'navbar': navbar,
-    'sidebar': sidebar,
-    'liveTestGraph': c2
+    'sidebar': sidebar
+    // 'liveTestGraph': c2
   },
   name: 'team',
   data: function () {
