@@ -7,8 +7,8 @@
         <p>If you already have your team credentials login here</p>
       </div>
       <div class="card l">
-        <input type="text" name="" value="" v-bind='username' placeholder="Team Name">
-        <input type="password" name="" value="" v-bind='password' placeholder="Team Password">
+        <input type="text" name="" value="" v-model='username' placeholder="Team Name">
+        <input type="password" name="" value="" v-model='password' placeholder="Team Password">
         <button @click='login'>Login</button>
       </div>
     </div>
