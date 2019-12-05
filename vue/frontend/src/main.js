@@ -15,7 +15,8 @@ Vue.use(VueCookie)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
-Vue.http.headers.common['access-control-allow-origin'] = '*'
+// Vue.http.headers.common['access-control-allow-origin'] = '*'
+
 new Vue({
   router,
   store,
