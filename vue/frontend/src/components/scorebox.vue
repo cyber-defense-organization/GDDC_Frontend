@@ -16,17 +16,22 @@
 </template>
 
 <script>
-
+import ti from '@/services/teamInfo.js'
 export default {
   name: 'scorebox',
   data: function () {
     return {
+      teamName: 't1',
       score1: '0.0',
       score2: '0/0',
       score3: '0.0'
     }
   },
   methods: {
+  },
+  async mounted () {
+    const response = await ti.getScores(this.teamName)
+    this.score1 = response.data.out.score
   }
 }
 </script>
