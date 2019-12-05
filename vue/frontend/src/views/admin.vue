@@ -4,7 +4,8 @@
     <div class='agrid'>
       <div class='cardS m'>
         <h1>Admin Panel</h1>
-        <light/>
+        <p>Clock Speed :{{ slider }}</p>
+        <input class='slider' v-model="slider" type="range" min="1" max="100" value="50">
         <div class='teamCardGrid'>
             <div class="cardD t1">
                 <p>Team Name : </p>
@@ -65,7 +66,7 @@
 </template>
 
 <script>
-// import axios from 'axios'
+// import ti from '@/services/teamInfo.js'
 import navbar from '../components/navbar.vue'
 import light from '../components/toggleLight.vue'
 
@@ -77,7 +78,8 @@ export default {
   name: 'admin',
   data: function () {
     return {
-      middleInfo: 'Admin Panel GTFO if your not suppose to be here'
+      middleInfo: 'Admin Panel GTFO if your not suppose to be here',
+      slider: 0
     }
   },
   methods: {
@@ -94,6 +96,9 @@ h1 {
 .m{
   grid-area: m;
   text-align: center;
+}
+.slider{
+  width: 100%;
 }
 
 .t1{
