@@ -7,8 +7,8 @@
         <p>If you already have your team credentials login here</p>
       </div>
       <div class="card l">
-        <input type="text" name="" value="" placeholder="Team Name">
-        <input type="password" name="" value="" placeholder="Team Password">
+        <input type="text" name="" value="" v-bind='username' placeholder="Team Name">
+        <input type="password" name="" value="" v-bind='password' placeholder="Team Password">
         <button @click='login'>Login</button>
       </div>
     </div>
@@ -18,7 +18,7 @@
 <script>
 // import axios from 'axios'
 // import navbar from '../components/navbar.vue'
-
+import auth from '@/services/authy.js'
 export default {
   components: {
     // navbar
@@ -26,14 +26,20 @@ export default {
   name: 'index',
   data: function () {
     return {
+      username: '',
+      password: ''
     }
   },
   methods: {
     sbpush () {
       this.$router.push('scoreboard')
     },
-    login () {
-      this.$cookie.set('test', 'Hello world!', 1)
+    async login () {
+      const response = await auth.login({
+        username: this.username,
+        password: this.password
+      })
+      console.log(response)
     }
   }
 }
