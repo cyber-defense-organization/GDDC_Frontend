@@ -1,10 +1,9 @@
 <template lang="html">
-  <div class="lightO">
-  <button v-on:click="show = !show">
-  </button>
-  <div class="light"></div>
-  <br>
-  <div class='lightOff'></div>
+  <div class="light">
+    <div v-if='state' class='lightOn'>
+    </div>
+    <div v-else class='lightOff'>
+    </div>
   </div>
 </template>
 
@@ -20,7 +19,7 @@ export default {
   name: 'light',
   data: function () {
     return {
-      show: true
+      // show: true
     }
   },
   methods: {
@@ -30,17 +29,17 @@ export default {
 
 <style lang="scss" scoped>
 @import '/../style/var.scss';
-.light{
-  height: 5px;
-  width: 5px;
+.lightOn{
+  height: 10px;
+  width: 10px;
   background-color: green;
   border-radius: 50%;
   box-shadow: 0px 0px 5px 0px rgb(9, 112, 26);
 }
 
 .lightOff{
-  height: 5px;
-  width: 5px;
+  height: 10px;
+  width: 10px;
   background-color: rgb(146, 20, 20);
   border-radius: 50%;
   box-shadow: 0px 0px 5px 0px rgb(255, 0, 0);

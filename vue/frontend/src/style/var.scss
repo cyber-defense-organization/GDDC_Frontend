@@ -49,6 +49,17 @@ $blueColor: #65B0ED !default;
    box-shadow: 0 14px 28px rgba(255,255,255,0.25), 0 10px 10px rgba(255,255,255,0.22);
 }
 
+.cardDS{
+  opacity: 100%;
+  background-color: $twoColor;
+  padding: 1em;
+  color: $oneColor;
+  //box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(255,255,255,0.12), 0 1px 2px rgba(255,255,255,0.24);
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
 .cardS{
   opacity: 100%;
   background-color: $oneColor;
