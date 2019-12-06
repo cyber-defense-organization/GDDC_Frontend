@@ -8,7 +8,7 @@
       :series="series"
     ></apexcharts>
     <!-- {{ teamScoreAll }} -->
-    {{ teamSocre1 }}
+    <!-- {{ teamSocre1 }} -->
   </div>
 </template>
 
@@ -60,7 +60,7 @@ export default {
       series: [
         {
           name: 'Team Score',
-          data: this.getData()
+          data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         }
       ]
     }
@@ -72,7 +72,7 @@ export default {
     async getScoreAll () {
       this.teamScoreAll = []
       const response = await ti.getScoreAll()
-      this.teamScoreAll = response.data.out[0]
+      this.teamScoreAll = response.data.out
       this.teamSocre1 = response.data.out[0].score
       this.teamSocre2 = response.data.out[1].score
       this.teamSocre3 = response.data.out[2].score
@@ -91,7 +91,7 @@ export default {
       dataSet.push(this.teamSocre1)
       dataSet.push(2)
       console.log(dataSet)
-      return dataSet
+      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     }
   }
 }

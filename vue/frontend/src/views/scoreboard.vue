@@ -6,8 +6,8 @@
         <h1>LeaderBoard</h1>
         <h2>Team - Points</h2>
         <barChart/>
-        <topList/>
       </div>
+      <topList class="s cardS"/>
       <!-- <div class="sidebar card">
           <sidebar/>
       </div> -->
@@ -50,11 +50,14 @@ h1{
   grid-gap: 2em;
   grid-template-rows: auto;
   grid-template-areas:
-    "m m m";
+    "m m s";
 }
 .main{
   grid-area: m;
   grid-gap: 1em;
   padding: 1em;
+}
+.s{
+  grid-area: s;
 }
 </style>
