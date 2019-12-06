@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="teamPanel cardS">
     <div class="Title">
-      <p>{{ title }}</p>
+      <p>{{ teamName }}</p>
     </div>
     <br>
     <scorebox/>
@@ -39,7 +39,6 @@ export default {
   name: 'teamPanel',
   data: function () {
     return {
-      title: 'Team Name or Team(num)',
       teamInfo: [],
       teamName: '',
       jwt: ''

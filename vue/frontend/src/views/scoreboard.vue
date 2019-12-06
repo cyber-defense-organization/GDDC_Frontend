@@ -4,24 +4,23 @@
     <div class="scoreGrid">
       <div class="main cardS">
         <h1>LeaderBoard</h1>
+        <h2>Team - Points</h2>
         <topList/>
       </div>
-      <div class="sidebar card">
+      <!-- <div class="sidebar card">
           <sidebar/>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import navbar from '../components/navbar.vue'
-import sidebar from '../components/sidebar.vue'
 import topList from '../components/topList.vue'
 
 export default {
   components: {
     'navbar': navbar,
-    'sidebar': sidebar,
     'topList': topList
   },
   name: 'scoreboard',
@@ -37,6 +36,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '/../style/var.scss';
+h1{
+  font-size: 2em;
+}
 .scoreGrid {
   margin-top: 40px;
   padding: 1em;
@@ -45,7 +47,7 @@ export default {
   grid-gap: 2em;
   grid-template-rows: auto;
   grid-template-areas:
-    "m m s";
+    "m m m";
 }
 .main{
   grid-area: m;

@@ -28,7 +28,6 @@ export default {
     this.teamName = this.$cookie.get('team')
     const response = await ti.getScores(this.teamName)
     this.score = response.data.out.score
-    console.log('score-----' + response.data.out.score)
     this.shopScore = response.data.out.shopScore
   }
 }

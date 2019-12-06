@@ -6,31 +6,34 @@
         <teamPanel/>
         <!-- <liveTestGraph/> -->
       </div>
-      <div class="sidebar">
+      <!-- <div class="sidebar">
         <sidebar/>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import navbar from '../components/navbar.vue'
-import sidebar from '../components/sidebar.vue'
+// import sidebar from '../components/sidebar.vue'
 import teamPanel from '../components/teamPanel.vue'
 // import c2 from '../components/c2.vue'
 // import LineChart from '../components/LineChart.js'
 export default {
   components: {
     'teamPanel': teamPanel,
-    'navbar': navbar,
-    'sidebar': sidebar
+    'navbar': navbar
+    // 'sidebar': sidebar
     // 'liveTestGraph': c2
   },
   name: 'team',
   data: function () {
     return {
-      teamName: 'Team Name or Num'
+      teamName: ''
     }
+  },
+  mounted () {
+    this.teamName = this.$cookie.get('team')
   },
   methods: {
   }
@@ -47,8 +50,8 @@ export default {
   grid-gap: 2em;
   grid-template-rows: auto;
   grid-template-areas:
-    "m m s"
-    "m m .";
+    "m m m"
+    "m m m";
 }
 .main{
   grid-area: m;

@@ -1,11 +1,12 @@
 <template lang="html">
   <div class="shop">
     <navbar :middleText='this.mid' />
+      <h1 class='cardS'> Shop Balance: {{ shopScore }}</h1>
       <div class="shopGrid">
         <div class='card'>
           <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy my Bitch</button>
-      </div>
+          <button @click='buy(item1, 1)'>Buy Item</button>
+        </div>
     </div>
   </div>
 </template>
@@ -13,6 +14,7 @@
 <script>
 import navbar from '../components/navbar.vue'
 import auth from '@/services/authy.js'
+import ti from '@/services/teamInfo.js'
 export default {
   components: {
     'navbar': navbar
@@ -23,12 +25,15 @@ export default {
       mid: 'Shop',
       teamName: '',
       jwt: '',
-      item1: 'YUH BOI'
+      shopScore: '',
+      item1: 'LIAM BOIIIIII'
     }
   },
-  mounted () {
+  async mounted () {
     this.teamName = this.$cookie.get('team')
     this.jwt = this.$cookie.get('JWT')
+    const response = await ti.getScores(this.teamName)
+    this.shopScore = response.data.out.shopScore
   },
   methods: {
     async buy (item, price) {
