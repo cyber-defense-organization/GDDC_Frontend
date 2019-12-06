@@ -7,9 +7,11 @@
         <p>If you already have your team credentials login here</p>
       </div>
       <div class="card l">
+        <form>
         <input type="text" name="" value="" v-model='username' placeholder="Team Name">
         <input type="password" name="" value="" v-model='password' placeholder="Team Password">
         <button @click='login'>Login</button>
+        </form>
       </div>
     </div>
   </div>
@@ -39,6 +41,8 @@ export default {
         username: this.username,
         password: this.password
       })
+      console.log(response.data)
+      //this.$cookie.set('JWT', 'Helo world!', 1);
       console.log(response)
     }
   }
