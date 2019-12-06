@@ -7,11 +7,12 @@
         <p>If you already have your team credentials login here</p>
       </div>
       <div class="card l">
-        <form>
+        <div v-if="error"><p>Invalid Login</p></div>
+        <!-- <form> -->
         <input type="text" name="" value="" v-model='username' placeholder="Team Name">
         <input type="password" name="" value="" v-model='password' placeholder="Team Password">
         <button @click='login'>Login</button>
-        </form>
+        <!-- </form> -->
       </div>
     </div>
   </div>
@@ -29,7 +30,8 @@ export default {
   data: function () {
     return {
       username: '',
-      password: ''
+      password: '',
+      error: false
     }
   },
   methods: {
@@ -41,9 +43,15 @@ export default {
         username: this.username,
         password: this.password
       })
-      console.log(response.data)
-      //this.$cookie.set('JWT', 'Helo world!', 1);
-      console.log(response)
+      if(response.data.status){
+        this.$cookie.set('JWT', response.data.jwtToken, 1);
+        this.$router.push('team')
+      }else{
+        this.error = true
+      }
+      // console.log(response.data.status)
+      // //this.$cookie.set('JWT', 'Helo world!', 1);
+      // console.log(response)
     }
   }
 }
