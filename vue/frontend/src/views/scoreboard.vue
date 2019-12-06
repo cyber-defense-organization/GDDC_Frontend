@@ -5,6 +5,7 @@
       <div class="main cardS">
         <h1>LeaderBoard</h1>
         <h2>Team - Points</h2>
+        <barChart/>
         <topList/>
       </div>
       <!-- <div class="sidebar card">
@@ -17,11 +18,13 @@
 <script>
 import navbar from '../components/navbar.vue'
 import topList from '../components/topList.vue'
+import barChart from '../components/barChart.vue'
 
 export default {
   components: {
     'navbar': navbar,
-    'topList': topList
+    'topList': topList,
+    'barChart': barChart
   },
   name: 'scoreboard',
   data: function () {
