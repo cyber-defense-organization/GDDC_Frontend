@@ -2,55 +2,55 @@
   <div class="shop">
     <navbar :middleText='this.mid' />
       <h1 class='cardS'> Shop Balance: {{ shopScore }}</h1>
-      <div class='cardD' v-if='this.showBuy'>{{ shopResp }} You bought something</div>
+      <div class='cardD' v-if='this.showBuy'>{{ shopResp }}</div>
       <div class="shopGrid">
         <div class='card si1'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Snack : 100</h1>
+          <button @click='buy(item1, 100)'>Buy Item</button>
         </div>
         <div class='card si2'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Red Team Joke : 100</h1>
+          <button @click='buy(item2, 100)'>Buy Item</button>
         </div>
         <div class='card si3'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Song Request : 300</h1>
+          <button @click='buy(item3, 300)'>Buy Item</button>
         </div>
         <div class='card si4'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Inject Extension 15m: 500</h1>
+          <button @click='buy(item4, 500)'>Buy Item</button>
         </div>
         <div class='card si5'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Inject Extension 15m: 600</h1>
+          <button @click='buy(item5, 600)'>Buy Item</button>
         </div>
         <div class='card si6'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>White Team Advise : 1000</h1>
+          <button @click='buy(item6, 1000)'>Buy Item</button>
         </div>
         <div class='card si7'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Red Team Advise : 1500</h1>
+          <button @click='buy(item6, 1500)'>Buy Item</button>
         </div>
         <div class='card si8'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Take Away Another Teams Chairs : 2000</h1>
+          <button @click='buy(item8, 2000)'>Buy Item</button>
         </div>
         <div class='card si9'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Quote Law Enforcement Seizer : 2000</h1>
+          <button @click='buy(item9, 2000)'>Buy Item</button>
         </div>
         <div class='card si10'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Inject Extension 1hr: 2000</h1>
+          <button @click='buy(item10, 2000)'>Buy Item</button>
         </div>
         <div class='card si11'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Revert One Machine : 2500</h1>
+          <button @click='buy(item11, 2500)'>Buy Item</button>
         </div>
         <div class='card si12'>
-          <h1>Item titme</h1>
-          <button @click='buy(item1, 1)'>Buy Item</button>
+          <h1>Revert Router : 2750</h1>
+          <button @click='buy(item12, 2750)'>Buy Item</button>
         </div>
         <div class='divider'></div>
         <div class="cardS ep">
@@ -79,7 +79,18 @@ export default {
       showBuy: false,
       jwt: '',
       shopScore: '',
-      item1: 'LIAM BOIIIIII'
+      item1: 'Snack',
+      item2: 'Buy Red Team Joke',
+      item3: 'Song Request',
+      item4: 'Inject extension 15min',
+      item5: 'Inject extension 30min',
+      item6: 'White Team Advise',
+      item7: 'Red Team Advise',
+      item8: 'Take Away a Team Chairs',
+      item9: 'Law enformcemnt Sezier Machine',
+      item10: 'Inject Extension 1hr',
+      item11: 'Revert 1 Machine',
+      item12: 'Revert Router'
     }
   },
   async mounted () {
@@ -90,6 +101,7 @@ export default {
   },
   methods: {
     async buy (item, price) {
+      // console.log(item + ' : ' + price)
       const response = await auth.transaction(this.teamName, this.jwt, item, price)
       this.shopResp = response.data.message
       this.showBuy = true
