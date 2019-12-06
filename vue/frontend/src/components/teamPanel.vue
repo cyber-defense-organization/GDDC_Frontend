@@ -47,13 +47,21 @@ export default {
     return {
       title: 'Team Name or Team(num)',
       teamInfo: [],
-      teamName: 't1'
+      teamName: '',
+      jwt: ''
+
     }
+  },
+  mounted () {
+    this.teamName = this.$cookie.get('team')
+    this.jwt = this.$cookie.get('JWT')
+    this.getTeamInfo()
+    console.log('yeeee')
   },
   methods: {
     async getTeamInfo () {
       this.teamInfo = []
-      const response = await ti.getTeamInfo(this.teamName)
+      const response = await ti.getTeamInfo(this.teamName, this.jwt)
       this.teamInfo = response.data.out
       // console.log(response.data.prof[0].com[1].msg)
       // console.log(response.data.out)

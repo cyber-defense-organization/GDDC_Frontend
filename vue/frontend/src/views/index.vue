@@ -43,10 +43,11 @@ export default {
         username: this.username,
         password: this.password
       })
-      if(response.data.status){
-        this.$cookie.set('JWT', response.data.jwtToken, 1);
+      if (response.data.status) {
+        this.$cookie.set('JWT', response.data.jwtToken, 1)
+        this.$cookie.set('team', response.data.team, 1)
         this.$router.push('team')
-      }else{
+      } else {
         this.error = true
       }
       // console.log(response.data.status)
