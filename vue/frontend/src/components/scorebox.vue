@@ -1,15 +1,11 @@
 <template lang="html">
   <div class="scorebox">
     <div class="sc1">
-      <h3>{{ score1 }}</h3>
+      <h3>{{ score }}</h3>
       <p>Current Score</p>
     </div>
-    <div class="sc2">
-      <h3>{{ score2 }}</h3>
-      <p>Injects Complete</p>
-    </div>
     <div class="sc3">
-      <h3>{{ score3 }}</h3>
+      <h3>{{ shopScore }}</h3>
       <p>Balance</p>
     </div>
   </div>
@@ -21,17 +17,19 @@ export default {
   name: 'scorebox',
   data: function () {
     return {
-      teamName: 't1',
-      score1: '0.0',
-      score2: '0/0',
-      score3: '0.0'
+      teamName: '',
+      score: '',
+      shopScore: ''
     }
   },
   methods: {
   },
   async mounted () {
+    this.teamName = this.$cookie.get('team')
     const response = await ti.getScores(this.teamName)
-    this.score1 = response.data.out.score
+    this.score = response.data.out.score
+    console.log('score-----' + response.data.out.score)
+    this.shopScore = response.data.out.shopScore
   }
 }
 </script>

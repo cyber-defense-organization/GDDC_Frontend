@@ -3,6 +3,7 @@
     <navbar :middleText='this.mid' />
     <div class="scoreGrid">
       <div class="main cardS">
+        <h1>LeaderBoard</h1>
         <topList/>
       </div>
       <div class="sidebar card">
