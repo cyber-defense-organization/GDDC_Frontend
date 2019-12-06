@@ -1,9 +1,8 @@
 <template lang="html">
   <div class="topList">
-      <ol>
-          <li>1</li>
-          <li>2</li>
-      </ol>
+      <ul>
+          <li v-for='(value) in teamScoreAll' v-bind:key="value"><h1>{{ value.name }}</h1> {{ value.score }}</li>
+      </ul>
   </div>
 </template>
 
@@ -15,6 +14,9 @@ export default {
     return {
       teamScoreAll: []
     }
+  },
+  mounted () {
+    this.getScoreAll()
   },
   methods: {
     async getScoreAll () {
