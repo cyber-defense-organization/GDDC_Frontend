@@ -6,5 +6,8 @@ export default {
   },
   getScores (teamName) {
     return Api().get('/teamScore/' + teamName)
+  },
+  getScoreAll () {
+    return Api().get('/teamScoreAll/')
   }
 }

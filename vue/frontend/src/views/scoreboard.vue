@@ -3,7 +3,7 @@
     <navbar :middleText='this.mid' />
     <div class="scoreGrid">
       <div class="main cardS">
-        <p>Team 1 :{}</p>
+        <topList/>
       </div>
       <div class="sidebar card">
           <sidebar/>
@@ -15,11 +15,13 @@
 <script>
 import navbar from '../components/navbar.vue'
 import sidebar from '../components/sidebar.vue'
+import topList from '../components/topList.vue'
 
 export default {
   components: {
     'navbar': navbar,
-    'sidebar': sidebar
+    'sidebar': sidebar,
+    'topList': topList
   },
   name: 'scoreboard',
   data: function () {

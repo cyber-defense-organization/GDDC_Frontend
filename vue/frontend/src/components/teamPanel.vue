@@ -17,10 +17,10 @@
       </thead>
       <tbody>
         <tr v-for='(value, index) in teamInfo' v-bind:key='value.status'>
-          <td class=""><light :state='value.status'/></td>
-          <td class="">{{ index }}</td>
-          <td class="">{{ value.error }}</td>
-          <td class="">{{ value.timeStamp }}</td>
+          <td class="" v-if="value.error !== 'na'"><light :state='value.status'/></td>
+          <td class="" v-if="value.error !== 'na'">{{ index }}</td>
+          <td class="" v-if="value.error !== 'na'">{{ value.error }}</td>
+          <td class="" v-if="value.error !== 'na'">{{ value.timeStamp }}</td>
         </tr>
       </tbody>
     </table>
