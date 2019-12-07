@@ -6,7 +6,7 @@
         <h1>LeaderBoard</h1>
         <h2>Team - Points</h2>
         <!-- <barChart/> -->
-        <topList/>>
+        <topList/>
       </div>
       <!-- <topList class="s cardS"/> -->
       <!-- <div class="sidebar card">
