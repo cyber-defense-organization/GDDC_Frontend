@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="shop">
     <navbar :middleText='this.mid' />
-      <h1 class='cardS'> Shop Balance: {{ shopScore }}</h1>
+      <h1 class='cardS'> Shop Balance: {{ Math.ceil(shopScore) }}</h1>
       <div class='cardD' v-if='this.showBuy'>{{ shopResp }}</div>
       <div class="shopGrid">
         <div class='card si1'>
@@ -57,7 +57,14 @@
           <h1>Ways to Earn Money:</h1>
           <p>Give Red Team a Compliment - 100 Points</p>
           <p>Lockpicking Challenges - 200 Points</p>
-          </div>
+        <p>Say the ABC backwards - 300 Points</p>
+<p>Crabwalk down the hallway - 400 Points</p>
+<p>Robot Dance Contest - 500 Points</p>
+<p>Workout Video - 500 Points</p>
+<p>Karaoke (Song chosen by Red Team) - 600 Points</p>
+<p>Push up challenge (Each team sends 1 rep) - 600 Points</p>
+<p>Speak only in 90s slang for 15 minutes - 650 Points</p>  
+	</div>
       </div>
   </div>
 </template>
