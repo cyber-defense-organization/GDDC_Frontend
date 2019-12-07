@@ -7,58 +7,16 @@
         <p>Clock Speed :{{ slider }}</p>
         <input class='slider' v-model="slider" type="range" min="1" max="100" value="50">
         <div class='teamCardGrid'>
-            <div class="cardD t1">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-                <div class='card'>Hello</div>
-                <light/>
-            </div>
-            <div class="cardD t2">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
-            <div class="cardD t3">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
-            <div class="cardD t4">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
-            <div class="cardD t5">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
-            <div class="cardD t6">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
-            <div class="cardD t7">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
-            <div class="cardD t8">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
-            <div class="cardD t9">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
-            <div class="cardD t10">
-                <p>Team Name : </p>
-                <p>Current Score : </p>
-                <p> : </p>
-            </div>
+            <teamPanel :teamNameIn='this.txt1'/>
+            <teamPanel :teamNameIn='this.txt2'/>
+            <teamPanel :teamNameIn='this.txt3'/>
+            <teamPanel :teamNameIn='this.txt4'/>
+            <teamPanel :teamNameIn='this.txt5'/>
+            <teamPanel :teamNameIn='this.txt6'/>
+            <teamPanel :teamNameIn='this.txt7'/>
+            <teamPanel :teamNameIn='this.txt8'/>
+            <teamPanel :teamNameIn='this.txt9'/>
+            <teamPanel :teamNameIn='this.txt10'/>
         </div>
       </div>
     </div>
@@ -67,18 +25,31 @@
 
 <script>
 // import ti from '@/services/teamInfo.js'
+import teamPanel from '../components/teamPanelAdmin.vue'
 import navbar from '../components/navbar.vue'
 import light from '../components/toggleLight.vue'
 
 export default {
   components: {
     navbar,
-    light
+    light,
+    teamPanel
   },
   name: 'admin',
   data: function () {
     return {
       middleInfo: 'Admin Panel GTFO if your not suppose to be here',
+      teamName1: 't1',
+      txt1: 'Team1',
+      txt2: 'Team2',
+      txt3: 'Team3',
+      txt4: 'Team4',
+      txt5: 'Team5',
+      txt6: 'Team6',
+      txt7: 'Team7',
+      txt8: 'Team8',
+      txt9: 'Team9',
+      txt10: 'Team10',
       slider: 0
     }
   },
