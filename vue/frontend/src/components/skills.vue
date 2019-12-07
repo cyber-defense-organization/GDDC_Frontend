@@ -3,7 +3,7 @@
     <apexcharts
       width="100%"
       height="350"
-      type="bar"
+      type="radar"
       :options="chartOptions"
       :series="series"
     ></apexcharts>
@@ -37,7 +37,8 @@ export default {
       dataOut: [],
       chartOptions: {
         chart: {
-          id: 'basic-bar',
+          id: 'radar',
+          height: 350,
           animations: {
             speed: 200
           }
@@ -45,22 +46,15 @@ export default {
         theme: {
           palette: 'palette10'
         },
-        dataLabels: {
-          enabled: false
+        title: {
+          text: ''
         },
-        plotOptions: {
-          bar: {
-            distributed: true
-          }
-        },
-        xaxis: {
-          categories: ['Team1', 'Team2', 'Team3', 'Team4', 'Team5', 'Team6', 'Team7', 'Team8', 'Team9', 'Team10']
-        }
+        labels: ['January', 'February', 'March', 'April', 'May']
       },
       series: [
         {
-          name: 'Team Score',
-          data: [3906, 3665, 2954, 3230, 4009, 3494, 5087, 4140, 3618, 4593]
+          name: 'Yuh',
+          data: [1, 2, 3, 4, 5]
         }
       ]
     }

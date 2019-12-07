@@ -5,7 +5,8 @@
       <div class="main cardS">
         <h1>LeaderBoard</h1>
         <h2>Team - Points</h2>
-        <!-- <barChart/> -->
+        <barChart/>
+        <!-- <skills/> -->
         <topList/>
       </div>
       <!-- <topList class="s cardS"/> -->
@@ -19,13 +20,15 @@
 <script>
 import navbar from '../components/navbar.vue'
 import topList from '../components/topList.vue'
+import skills from '../components/skills.vue'
 import barChart from '../components/barChart.vue'
 
 export default {
   components: {
     'navbar': navbar,
     'topList': topList,
-    'barChart': barChart
+    'barChart': barChart,
+    'skills': skills
   },
   name: 'scoreboard',
   data: function () {
