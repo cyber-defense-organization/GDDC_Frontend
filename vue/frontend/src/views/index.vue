@@ -39,6 +39,7 @@ export default {
       this.$router.push('scoreboard')
     },
     async login () {
+      console.log('Hello')
       const response = await auth.login({
         username: this.username,
         password: this.password

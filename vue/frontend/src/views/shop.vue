@@ -3,7 +3,7 @@
     <navbar :middleText='this.mid' />
       <h1 class='cardS'> Shop Balance: {{ Math.ceil(shopScore) }}</h1>
       <div class='cardD' v-if='this.showBuy'>{{ shopResp }}</div>
-      <div class="shopGrid">
+      <div v-if="renderAll" class="shopGrid">
         <div class='card si1'>
           <h1>Snack : 100</h1>
           <button @click='buy(item1, 100)'>Buy Item</button>
@@ -80,6 +80,7 @@ export default {
   name: 'shop',
   data: function () {
     return {
+      renderAll: true,
       mid: 'Shop',
       teamName: '',
       shopResp: '',
@@ -109,11 +110,13 @@ export default {
   methods: {
     async buy (item, price) {
       // console.log(item + ' : ' + price)
+      this.renderAll = false
       const response = await auth.transaction(this.teamName, this.jwt, item, price)
       this.shopResp = response.data.message
       this.showBuy = true
       const responseS = await ti.getScores(this.teamName)
       this.shopScore = responseS.data.out.shopScore
+      this.renderAll = true
     }
   }
 }

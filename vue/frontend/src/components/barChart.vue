@@ -60,7 +60,7 @@ export default {
       series: [
         {
           name: 'Team Score',
-          data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          data: [100, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         }
       ]
     }

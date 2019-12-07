@@ -5,9 +5,10 @@
       <div class="main cardS">
         <h1>LeaderBoard</h1>
         <h2>Team - Points</h2>
-        <barChart/>
+        <!-- <barChart/> -->
+        <topList/>>
       </div>
-      <topList class="s cardS"/>
+      <!-- <topList class="s cardS"/> -->
       <!-- <div class="sidebar card">
           <sidebar/>
       </div> -->
@@ -50,7 +51,8 @@ h1{
   grid-gap: 2em;
   grid-template-rows: auto;
   grid-template-areas:
-    "m m s";
+    // "m m s";
+    "m m m";
 }
 .main{
   grid-area: m;
