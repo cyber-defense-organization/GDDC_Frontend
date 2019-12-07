@@ -1,11 +1,11 @@
 <template lang="html">
   <div class="scorebox">
     <div class="sc1">
-      <h3>{{ score }}</h3>
+      <h3>{{ Math.ceil(score) }}</h3>
       <p>Current Score</p>
     </div>
     <div class="sc3">
-      <h3>{{ shopScore }}</h3>
+      <h3>{{ Math.ceil(shopScore) }}</h3>
       <p>Balance</p>
     </div>
   </div>

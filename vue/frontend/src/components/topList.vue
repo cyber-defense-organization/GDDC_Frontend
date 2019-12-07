@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="topList">
       <ul>
-          <li v-for='(value) in teamScoreAll' v-bind:key="value">{{ value.name }} - {{ value.score }}</li>
+          <li v-for='(value) in teamScoreAll' v-bind:key="value">{{ value.name }} - {{ Math.ceil(value.score) }}</li>
       </ul>
   </div>
 </template>
