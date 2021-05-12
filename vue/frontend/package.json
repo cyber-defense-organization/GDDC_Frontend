@@ -13,7 +13,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.8",
     "apexcharts": "^3.10.1",
     "axios": "^0.19.0",
-    "chart.js": "^2.9.2",
+    "chart.js": "^2.9.4",
     "core-js": "^3.3.2",
     "dns": "^0.2.2",
     "module": "^1.2.5",
